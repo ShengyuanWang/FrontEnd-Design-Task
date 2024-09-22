@@ -32,7 +32,6 @@ const LoginPage = ({ setAuth }) => {
   };
 
   return (
-    <div className='container'>
     <div className="login-page">
       <h1 className="title">Login</h1>
       <form onSubmit={handleLogin}>
@@ -70,7 +69,6 @@ const LoginPage = ({ setAuth }) => {
       </form>
       
       
-    </div>
     </div>
   );
 };
