@@ -32,27 +32,45 @@ const LoginPage = ({ setAuth }) => {
   };
 
   return (
+    <div className='container'>
     <div className="login-page">
       <h1 className="title">Login</h1>
       <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <div className="input-group">
+          <div className='input-icon'>
+            <i className='fa fa-user'></i>
+            <input
+              id='username'
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+        </div>
+        <div className="input-group">
+          <div className='input-icon'>
+            <i className='fa fa-lock'></i>
+            <input
+              id='password'
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+        </div>
+
         {error && <p className="error">{error}</p>}
+    
         <button type="submit" className="login-button">Login</button>
+        <p className='make-account'>Don't have an account? <a href="/create-user" className='create-user'>Create one</a></p>
       </form>
-      <p>Don't have an account? <a href="/create-user">Create one</a></p>
+      
+      
+    </div>
     </div>
   );
 };
