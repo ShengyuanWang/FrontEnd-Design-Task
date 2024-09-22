@@ -11,6 +11,7 @@ const Dashboard = ({ setAuth }) => {
   useEffect(() => {
     fetchAlerts(); // Fetch alerts when component mounts
   }, []);
+  console.log(alerts);
 
   const fetchAlerts = async () => {
     try {
@@ -93,7 +94,7 @@ const Dashboard = ({ setAuth }) => {
                     <td>{alert.id}</td>
                     <td>{alert.name}</td>
                     <td>{alert.description}</td>
-                    <td>
+                    <td className='info'>
                       <Link to={`/alert/${alert.id}`}>More Info</Link>
                     </td>
                   </tr>

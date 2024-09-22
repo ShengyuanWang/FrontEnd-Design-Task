@@ -207,7 +207,6 @@ tbody tr:hover {
 .title {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 1rem;
 }
 
 .no-alerts {
@@ -216,4 +215,12 @@ tbody tr:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.info {
+  color: #0056b3;
+}
+
+.info:hover {
+  color:#007bff;
 }
