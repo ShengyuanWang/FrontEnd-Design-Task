@@ -113,7 +113,7 @@ def add_dummy_data():
                 id=alert_data['id'],
                 name=alert_data['name'],
                 description=alert_data['description'],
-                machine=alert_data['machine'],
+                machine=alert_data['machine'][-1],
                 occurred_on=alert_data['occurred_on'],
                 severity=alert_data['severity'],
                 program=alert_data['program']
@@ -196,8 +196,8 @@ def get_alerts():
     global uploadCount
     try:
         if uploadCount > 1:
-            alerts = Alert.query.with_entities(Alert.id, Alert.name, Alert.description).all()
-            alert_list = [{'id': alert.id, 'name': alert.name, 'description': alert.description} for alert in alerts]
+            alerts = Alert.query.with_entities(Alert.id, Alert.name, Alert.description, Alert.machine).all()
+            alert_list = [{'id': alert.id, 'name': alert.name, 'description': alert.description, 'machine': alert.machine} for alert in alerts]
         else:
             alert_list = []
 
